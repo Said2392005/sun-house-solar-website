@@ -188,3 +188,11 @@ body {
   margin-right: 0.5rem;
   flex-shrink: 0;
 }
+
+@keyframes waPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  50%       { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+.wa-pulse {
+  animation: waPulse 2.5s ease-out infinite;
+}

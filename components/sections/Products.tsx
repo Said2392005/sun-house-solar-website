@@ -2,46 +2,46 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Sun, Zap, Battery, Layers, Cable, BarChart2, Droplets, Lightbulb } from 'lucide-react'
 
 const products = [
   {
-    emoji: '☀️',
+    Icon: Sun,
     title: 'Solar Panels',
     desc: 'Mono PERC & bifacial modules from Waaree, Adani, Tata, Vikram — 330W to 600W range.',
   },
   {
-    emoji: '⚡',
+    Icon: Zap,
     title: 'Inverters',
     desc: 'On-grid, off-grid and hybrid inverters. Brands: Solis, Growatt, Goodwe, Havells.',
   },
   {
-    emoji: '🔋',
+    Icon: Battery,
     title: 'Batteries',
     desc: 'Lithium-ion and lead-acid storage solutions for uninterrupted backup power.',
   },
   {
-    emoji: '🏗️',
+    Icon: Layers,
     title: 'Mounting Structures',
     desc: 'Galvanised and aluminium rooftop mounting frames — RCC, tin roof and ground mount.',
   },
   {
-    emoji: '🔌',
+    Icon: Cable,
     title: 'BOS Components',
     desc: 'DC cables, MC4 connectors, junction boxes, earthing kits and AC switchgear.',
   },
   {
-    emoji: '📊',
+    Icon: BarChart2,
     title: 'Monitoring Systems',
     desc: 'Real-time generation and consumption monitoring with mobile app connectivity.',
   },
   {
-    emoji: '💧',
+    Icon: Droplets,
     title: 'Solar Water Pumps',
     desc: 'Agriculture solar pumps with MNRE subsidy. 1 HP to 10 HP range available.',
   },
   {
-    emoji: '🔦',
+    Icon: Lightbulb,
     title: 'Solar Lights',
     desc: 'Street lights, garden lights and home lighting systems for off-grid locations.',
   },
@@ -75,19 +75,25 @@ export default function Products() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {products.map((p, i) => (
-            <motion.div
-              key={i}
-              variants={fade(i * 0.05)}
-              initial="hidden"
-              animate={inView ? 'visible' : 'hidden'}
-              className="card p-6 hover:border-white/[0.14] transition-colors duration-200"
-            >
-              <span className="text-2xl mb-4 block">{p.emoji}</span>
-              <h3 className="text-[15px] font-semibold font-poppins text-white mb-2">{p.title}</h3>
-              <p className="text-[13px] text-slate-500 leading-relaxed">{p.desc}</p>
-            </motion.div>
-          ))}
+          {products.map((p, i) => {
+            const Icon = p.Icon
+            return (
+              <motion.div
+                key={i}
+                variants={fade(i * 0.05)}
+                initial="hidden"
+                animate={inView ? 'visible' : 'hidden'}
+                className="card p-6 hover:border-white/[0.14] transition-colors duration-200"
+              >
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+                  style={{ background: 'rgba(16,185,129,0.1)' }}>
+                  <Icon className="w-5 h-5" strokeWidth={1.5} style={{ color: '#10B981' }} />
+                </div>
+                <h3 className="text-[15px] font-semibold font-poppins text-white mb-2">{p.title}</h3>
+                <p className="text-[13px] text-slate-500 leading-relaxed">{p.desc}</p>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

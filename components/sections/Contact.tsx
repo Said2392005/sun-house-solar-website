@@ -13,7 +13,7 @@ const serviceOptions = [
   'Commercial Solar Project',
   'Residential Solar System',
   'Product Enquiry',
-  'GreenVolt App Access',
+  'App Early Access (Notify Me)',
   'Other',
 ]
 
@@ -37,9 +37,22 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      const res = await fetch('https://formspree.io/f/xvznlpjw', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        alert('Something went wrong. Please call us directly at 9175084823.')
+      }
+    } catch {
+      alert('Network error. Please call us directly at 9175084823.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (

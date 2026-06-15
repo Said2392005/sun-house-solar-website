@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Download, Bell, MapPin, TrendingUp, Calendar, FileText, Wrench, Star } from 'lucide-react'
+import { Bell, MapPin, TrendingUp, Calendar, FileText, Wrench, Star, Clock } from 'lucide-react'
 
 const features = [
   { icon: Calendar, label: 'Service Scheduling',  desc: 'Book cleaning, maintenance or AMC visits instantly.' },
@@ -52,7 +52,7 @@ export default function GreenVoltApp() {
                   <div>
                     <div className="text-[9px] text-slate-500">Good Morning ☀️</div>
                     <div className="text-sm font-bold font-poppins text-white">
-                      Green<span style={{ color: '#10B981' }}>Volt</span>
+                      Sun House <span style={{ color: '#10B981' }}>Solar</span>
                     </div>
                   </div>
                   <div className="w-7 h-7 rounded-full flex items-center justify-center border border-white/10" style={{ background: 'rgba(255,255,255,0.05)' }}>
@@ -103,13 +103,12 @@ export default function GreenVoltApp() {
           {/* Right — text */}
           <div className="space-y-8">
             <motion.div variants={fade(0.1)} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-              <p className="label-text mb-4">Mobile App</p>
+              <p className="label-text mb-4">Mobile App — Coming Soon</p>
               <h2 className="h2 mb-5">
-                Manage Your Solar<br />with GreenVolt
+                Manage Your Solar<br />with the Sun House Solar App
               </h2>
               <p className="body-text">
-                The GreenVolt app gives Sun House Solar customers complete control over their solar system.
-                Book services, track engineers, view reports and manage AMC contracts — all from one app.
+                We are building a dedicated app for Sun House Solar customers — book services, track field engineers, view reports and manage AMC contracts, all from your phone. Launching soon for Android.
               </p>
             </motion.div>
 
@@ -137,12 +136,13 @@ export default function GreenVoltApp() {
             </motion.div>
 
             <motion.div variants={fade(0.3)} initial="hidden" animate={inView ? 'visible' : 'hidden'}>
-              <a href="#" className="btn-primary">
-                <Download className="w-4 h-4" />
-                Download Android APK
-              </a>
+              <div className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full border border-white/[0.1] text-sm font-semibold text-slate-400"
+                style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <Clock className="w-4 h-4" style={{ color: '#10B981' }} />
+                App Launching Soon — Android &amp; iOS
+              </div>
               <p className="text-[12px] text-slate-600 mt-3">
-                Available exclusively for Sun House Solar customers. iOS coming soon.
+                Register your interest via the contact form and we'll notify you on launch.
               </p>
             </motion.div>
           </div>
