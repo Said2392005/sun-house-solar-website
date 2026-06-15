@@ -23,7 +23,7 @@ const galleryItems = [
     id: 3,
     title: 'Home Solar System – 5 kW',
     location: 'Padma Nagar',
-    image: 'https://images.unsplash.com/photo-1545209463-4769a4b5c1db?w=800&q=75&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=75&auto=format&fit=crop',
   },
   {
     id: 4,
