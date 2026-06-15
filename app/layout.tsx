@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     images: ['https://www.sunhousesolar.in/og-image.jpg'],
   },
   robots: 'index, follow',
+  verification: {
+    google: '7oG3cumgkExOOvO6L7xaodbDSAjhYxvgcj7cgrCqqXs',
+  },
   icons: {
     icon: '/sun-house-logo.jpg',
     apple: '/sun-house-logo.jpg',
