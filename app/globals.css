@@ -240,3 +240,7 @@ body {
 .wa-pulse {
   animation: waPulse 2.5s ease-out infinite;
 }
+
+/* ─── Hide scrollbar (horizontal scroll lanes) ───────────────── */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
