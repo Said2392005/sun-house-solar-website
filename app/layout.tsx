@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Outfit, DM_Sans } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
+
+const GA_ID = 'G-170DQW3RLK'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -130,6 +133,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-[#0F1F1A] text-slate-100 antialiased" style={{ fontFamily: 'var(--font-sans, Inter, sans-serif)' }}>
         {children}
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+        </Script>
       </body>
     </html>
   )

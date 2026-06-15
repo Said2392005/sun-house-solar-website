@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.sunhousesolar.in
+
+# Sitemaps
+Sitemap: https://www.sunhousesolar.in/sitemap.xml
