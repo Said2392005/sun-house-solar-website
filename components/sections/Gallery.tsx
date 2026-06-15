@@ -34,13 +34,13 @@ const galleryItems = [
     id: 5,
     title: 'Warehouse Solar – 30 kW',
     location: 'Osmanabad',
-    image: 'https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=800&q=80&auto=format&fit=crop',
+    image: '/gallery-warehouse-30kw.png',
   },
   {
     id: 6,
     title: 'Ground Mount System – 25 kW',
     location: 'Akkalkot',
-    image: 'https://images.unsplash.com/photo-1592833159155-c62df1b65634?w=800&q=75&auto=format&fit=crop',
+    image: '/gallery-ground-mount-25kw.png',
   },
 ]
 
